@@ -26,11 +26,15 @@ public class Produto {
         return ID;
     }
 
+    public void setId(UUID ID) {
+        this.ID = ID;
+    }
+
     public String getNome() {
         return nome;
     }
 
-    private void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -38,7 +42,7 @@ public class Produto {
         return preco;
     }
 
-    private void setPreco(Double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -46,7 +50,7 @@ public class Produto {
         return quantidadeEstoque;
     }
 
-    private void setQuantidadeEstoque(Integer quantidadeEstoque) {
+    public void setQuantidadeEstoque(Integer quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
@@ -54,12 +58,16 @@ public class Produto {
         return categoriaProduto;
     }
 
-    private void setCategoriaProduto(CategoriaProduto categoriaProduto) {
+    public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
         this.categoriaProduto = categoriaProduto;
     }
 
     public LocalDateTime getRegistradoEm() {
         return registradoEm;
+    }
+
+    public void setRegistradoEm(LocalDateTime registradoEm) {
+        this.registradoEm = registradoEm;
     }
 
     @Override
