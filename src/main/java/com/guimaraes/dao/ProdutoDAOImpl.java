@@ -150,4 +150,26 @@ public class ProdutoDAOImpl implements ProdutoDAO {
         }
 
     }
+
+    public void atualizar(Produto produto){
+        String sql = String.format
+                (Locale.US,
+                """
+                UPDATE produto
+                SET 
+                    preco = '%f', quantidade_em_estoque = '%d'
+                WHERE 
+                    nome = '%s'
+                """, produto.getPreco(), produto.getQuantidadeEstoque(), produto.getNome()
+        );
+
+        try(
+                Connection connection = ConnectionFactory.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+        ){
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
