@@ -13,6 +13,10 @@ public class Produto {
     private CategoriaProduto categoriaProduto;
     private LocalDateTime registradoEm;
 
+    public Produto(){
+
+    }
+
     public Produto(String nome, Double preco, Integer quantidadeEstoque,
                    String categoria
     ){
