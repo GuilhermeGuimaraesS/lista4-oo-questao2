@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public interface ProdutoDAO {
 
+    void registrar(Produto produto);
     Produto buscarPorId(UUID ID);
     Produto buscarPorNome(String nome);
     List<Produto> verEstoque();

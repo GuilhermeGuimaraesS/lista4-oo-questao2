@@ -4,6 +4,7 @@ import com.guimaraes.config.ConnectionFactory;
 import com.guimaraes.dao.ProdutoDAO;
 import com.guimaraes.dao.ProdutoDAOImpl;
 import com.guimaraes.model.Produto;
+import com.guimaraes.service.ProdutoService;
 
 import javax.crypto.spec.PSource;
 import java.sql.Connection;
@@ -15,6 +16,10 @@ public class Main {
     static void main() {
 
         ProdutoDAO produtoDAO = new ProdutoDAOImpl();
+        ProdutoService produtoService = new ProdutoService(produtoDAO);
+
+        /*Produto produtoNovo  = new Produto("Amaciante", 10.34, 7, "limpeza");
+        produtoService.cadastrarNoEstoque(produtoNovo);*/
 
         Produto produtoBuscado02 = produtoDAO.buscarPorNome("Detergente");
         IO.println(produtoBuscado02.toString());

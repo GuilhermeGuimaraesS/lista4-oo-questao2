@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 public class ProdutoDAOImpl implements ProdutoDAO {
@@ -121,6 +122,30 @@ public class ProdutoDAOImpl implements ProdutoDAO {
                 return produtosCadastrados;
             }
         } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void registrar(Produto produto){
+
+        String sql = String.format
+                ( Locale.US,
+                """
+                INSERT INTO produto
+                    (nome, preco, quantidade_em_estoque, categoria_produto)
+                VALUES
+                    ('%s', '%f', '%d', '%s')
+                """, produto.getNome(), produto.getPreco(), produto.getQuantidadeEstoque(),
+                        produto.getCategoriaProduto()
+        );
+
+        try (
+                Connection connection = ConnectionFactory.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+        ){
+            statement.executeUpdate();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
