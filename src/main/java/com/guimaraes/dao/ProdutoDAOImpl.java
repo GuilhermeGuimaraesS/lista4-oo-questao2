@@ -176,4 +176,22 @@ public class ProdutoDAOImpl implements ProdutoDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public void remover(UUID ID){
+        String sql = String.format("""
+                DELETE FROM produto
+                WHERE id = '%s'
+                """, ID
+        );
+
+        try (
+                Connection connectio = ConnectionFactory.getConnection();
+                PreparedStatement statement = connectio.prepareStatement(sql);
+        ) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

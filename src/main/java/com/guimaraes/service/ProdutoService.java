@@ -3,6 +3,8 @@ package com.guimaraes.service;
 import com.guimaraes.dao.ProdutoDAO;
 import com.guimaraes.model.Produto;
 
+import java.util.UUID;
+
 public class ProdutoService {
 
     private final ProdutoDAO produtoDAO;

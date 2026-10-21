@@ -21,7 +21,7 @@ public class Main {
         /*Produto produtoNovo  = new Produto("Amaciante", 10.34, 7, "limpeza");
         produtoService.cadastrarNoEstoque(produtoNovo);*/
 
-        Produto produtoAtualizado = new Produto("Amaciante", 9.00, 7, "limpeza");
+        /*Produto produtoAtualizado = new Produto("Amaciante", 9.00, 7, "limpeza");
         produtoService.editarInfosProduto(produtoAtualizado);
 
         Produto produtoBuscado02 = produtoDAO.buscarPorNome("Detergente");
@@ -30,13 +30,16 @@ public class Main {
         Produto produtoBuscado01 = produtoDAO.buscarPorId(UUID.fromString(
                 "7362f970-043f-4046-982b-37117d18aaeb")
         );
-        IO.println(produtoBuscado01.toString());
+        IO.println(produtoBuscado01.toString());*/
+
+        produtoDAO.remover(UUID.fromString("847fa9c3-e595-46ca-b87a-4d2dc2fe6ade"));
 
         IO.println("----------------------------------------------------------");
         List<Produto> produtosCadastrados = produtoDAO.verEstoque();
         for (Produto produto : produtosCadastrados){
             IO.println(produto.toString());
         }
+
 
     }
 }
