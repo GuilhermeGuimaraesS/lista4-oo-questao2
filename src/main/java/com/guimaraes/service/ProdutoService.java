@@ -25,14 +25,4 @@ public class ProdutoService {
         produtoDAO.registrar(produto);
 
     }
-
-    public void editarInfosProduto(Produto produto){
-        Produto produto1 = produtoDAO.buscarPorNome(produto.getNome());
-
-        if (produto1.getNome() == null || produto1.getId() == null){
-            throw new IllegalArgumentException("Este produto não está cadastrado!");
-        }
-
-        produtoDAO.atualizar(produto);
-    }
 }

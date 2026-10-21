@@ -11,5 +11,4 @@ public interface ProdutoDAO {
     Produto buscarPorId(UUID ID);
     Produto buscarPorNome(String nome);
     List<Produto> verEstoque();
-    void atualizar(Produto produto);
 }
