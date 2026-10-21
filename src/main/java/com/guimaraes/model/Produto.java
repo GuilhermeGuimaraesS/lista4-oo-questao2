@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Produto {
-    private UUID ID;
+    private static UUID ID;
     private String nome;
     private Double preco;
     private Integer quantidadeEstoque;

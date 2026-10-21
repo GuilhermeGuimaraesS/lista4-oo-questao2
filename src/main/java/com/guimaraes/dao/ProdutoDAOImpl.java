@@ -43,10 +43,9 @@ public class ProdutoDAOImpl implements ProdutoDAO {
                             CategoriaProduto.stringParaCategoria(resultSet.getString("categoria_produto"))
                     );
                     produtoBuscado.setRegistradoEm(resultSet.getObject("registrado_em", LocalDateTime.class));
-                    return produtoBuscado;
                 }
 
-                return null;
+                return produtoBuscado;
             }
 
         } catch (SQLException e) {
@@ -81,13 +80,10 @@ public class ProdutoDAOImpl implements ProdutoDAO {
                             CategoriaProduto.stringParaCategoria(resultSet.getString("categoria_produto"))
                     );
                     produtoBuscado.setRegistradoEm(resultSet.getObject("registrado_em", LocalDateTime.class));
-                    return produtoBuscado;
                 }
 
-                return null;
+                return produtoBuscado;
             }
-
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
